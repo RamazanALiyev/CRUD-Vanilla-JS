@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.parent {
+  width: 60%;
+}
+.titleHeader {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.titleHeader button {
+  width: 150px;
+  height: 40px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.fa-solid.fa-pen-to-square {
+  cursor: pointer;
+  color: blue;
+}
+.fa-solid.fa-delete-left {
+  cursor: pointer;
+  color: crimson;
+}
+.active {
+  color: green;
+}
+.deactive {
+  color: crimson;
+}
