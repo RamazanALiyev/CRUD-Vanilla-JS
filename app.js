@@ -1,5 +1,9 @@
 let dataList;
 let editRow;
+const table = document.querySelector("table");
+const spinner = document.querySelector("#spinner");
+const autoGroups = document.querySelector("#autoGroups");
+const motoGroups = document.querySelector("#motoGroups");
 const inputName = document.querySelector("#car-name");
 const inputModel = document.querySelector("#car-model");
 const inputDesc = document.querySelector("#car-text");
@@ -10,11 +14,19 @@ const newAddBtn = document.querySelector("#newAddBtn");
 const editAddBtn = document.querySelector("#editAddBtn");
 const tbody = document.querySelector("tbody");
 const initialVal = { name: "", model: "", description: "" };
+autoGroups.addEventListener("click", function () {
+  window.location.href = "index.html";
+});
+motoGroups.addEventListener("click", function () {
+  window.location.href = "motor.html";
+});
 window.addEventListener("load", getData);
 function getData() {
   fetch("https://63d35c46c1ba499e54bff4ef.mockapi.io/ProjectCars")
     .then((response) => response.json())
     .then((datas) => {
+      spinner.style.display = "none";
+      table.style.display = "table";
       dataList = datas;
       let list = datas
         .reverse()
@@ -35,7 +47,9 @@ function getData() {
              <td ${data.status ? "class=active" : "class=deactive"}>${
               data.status ? "Aktiv" : "Deaktiv"
             }</td>
-             <td onClick=changeStatus(${data.id})>${
+             <td ${
+               data.status ? "class=activeDo" : "class=deactiveDo"
+             } onClick=changeStatus(${data.id})>${
               data.status ? "Deacktiv et" : "Aktiv et"
             }</td>
         </tr>

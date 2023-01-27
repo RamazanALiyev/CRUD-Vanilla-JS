@@ -4,27 +4,47 @@
   box-sizing: border-box;
 }
 body {
+  padding: 10rem 0;
   width: 100vw;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 div.parent {
   width: 60%;
 }
+table {
+  display: none;
+}
+#spinner {
+  padding: 40px;
+}
 .titleHeader {
   width: 100%;
   height: 60px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid lightgray;
+  border-radius: 5px;
 }
 .titleHeader button {
   width: 150px;
   height: 40px;
   margin: 0 10px;
   cursor: pointer;
+}
+table thead tr {
+  background-color: rgb(176, 176, 176);
+}
+table tbody tr:nth-child(odd) {
+  background-color: rgb(232, 232, 232);
+}
+table tbody tr:nth-child(even) {
+  background-color: rgb(249, 249, 249);
 }
 .fa-solid.fa-pen-to-square {
   cursor: pointer;
@@ -39,4 +59,16 @@ div.parent {
 }
 .deactive {
   color: crimson;
+}
+.activeDo {
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  background-color: crimson !important;
+}
+.deactiveDo {
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  background-color: green !important;
 }
